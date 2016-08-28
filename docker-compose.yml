@@ -1,0 +1,31 @@
+version: '2'
+services:
+  web_data:
+    container_name: web_data
+    image         : web_data
+    build:
+      context : .
+      dockerfile: web_data.dockerfile
+  web_php:
+    container_name: web_php
+    image         : web_php
+    build:
+      context : .
+      dockerfile: web_php.dockerfile
+    volumes_from:
+      - web_data
+  web_server:
+    container_name: web_server
+    image         : web_server
+    build:
+      context : .
+      dockerfile: web_server.dockerfile
+    volumes_from:
+      - web_data
+    ports:
+     - "8080:80"
+    links:
+      - web_php:php_server
+networks:
+  isolated-network:
+    driver: bridge

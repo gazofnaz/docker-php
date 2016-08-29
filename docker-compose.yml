@@ -24,8 +24,3 @@ services:
       - web_data
     ports:
      - "8080:80"
-    links:
-      - web_php:php_server
-networks:
-  isolated-network:
-    driver: bridge

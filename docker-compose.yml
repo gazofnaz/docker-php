@@ -6,6 +6,9 @@ services:
     build:
       context : .
       dockerfile: web_data.dockerfile
+    volumes:
+      - /etc/nginx/conf.d/
+      - /var/www/html/
   web_php:
     container_name: web_php
     image         : web_php

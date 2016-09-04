@@ -1,1 +1,2 @@
-CREATE TABLE `web_db`.`web_db_table_updated` ( `id` INT NOT NULL , `comment` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `web_db`.`web_db_table` ( `id` INT NOT NULL , `comment` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `web_db_table` (`id`, `comment`) VALUES ('1', 'Hello World!');

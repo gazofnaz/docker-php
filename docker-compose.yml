@@ -34,3 +34,19 @@ services:
       - web_data
     ports:
      - "8080:80"
+
+  # MYSQL install
+  web_db:
+    container_name: web_db
+    image         : web_db
+    build:
+      context : .
+      dockerfile: web_db.dockerfile
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD  : 1
+      MYSQL_ROOT_PASSWORD         : ''
+      MYSQL_USER                  : arnottg
+      MYSQL_PASSWORD              : pa33word
+      MYSQL_DATABASE              : web_db
